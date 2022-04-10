@@ -1,4 +1,3 @@
-from unittest import result
 from flask import Flask, render_template, request, jsonify
 import joblib
 import numpy as np
@@ -7,9 +6,10 @@ import numpy as np
 app = Flask(__name__)
 
 @app.route("/", methods = ['GET', 'POST'])
+
 def weight_prediction():
     if request.method == 'GET':
-        return render_template("predict_whg.html")
+        return render_template("predict_web.html")
     elif request.method == 'POST':
         print(dict(request.form))
         weight_features = dict(request.form).values()   #proses request 'from' atau 'dari' user input
