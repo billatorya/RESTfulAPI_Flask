@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet" />
+    <title>Prediction Weight by Height and Gender</title>
+    <link rel="stylesheet" href="../static/style.css" />
+</head>
+<body>
+    <div>
+        <h1>Prediksi Berat Badan berdasarkan Tinggi Badan dan Jenis Kelamin</h1>
+        <div class="d-flex flex-row">
+            <div>
+                <img class="allura" src="../static/Allura.svg" alt="img" />
+            </div>
+    
+            <div>
+                <h4>Apa Jenis Kelamin Anda?</h4>
+                <div class="form-gender d-flex flex-row" style="padding: 10px">
+                    <label style="margin-right: 10px">
+                    <input type="radio" name="Gender" value="0" checked />
+                    <img src="../static/male-opsi.svg" alt="male"/>
+                    </label>
+                <label>
+                    <input type="radio" name="Gender" value="1" />
+                    <img src="../static/female-opsi.svg" alt="female"
+                    /></label>
+            </div>
+            <form action="">
+                <h4>Berapa tinggi badan Anda?</h4>
+                <input type="text" name="Height" placeholder="Masukkan tinggi badan" required /> Inch <br />
+                <br/>
+                <button class="submit" role="button">Submit</button>
+            </form>
+        {% if result is defined %}
+            <div class="prediction-result">
+                <h4><i>Hasil Prediksi Berat Badan</i></h4>
+                <h2 class="mx-auto text-3xl text-center bg-gray-300 rounded rounded-full mt-5">{{result}}</h1>
+            </div>
+        {% endif %}
+            </div>  
+        
+        </div>
+    </div>
+</body>
+</html>
